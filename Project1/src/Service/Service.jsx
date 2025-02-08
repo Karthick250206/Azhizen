@@ -6,7 +6,7 @@ import softwareImage from '../assets/software.jpg';
 
 const styles = {
   html: {
-    margin: 0,
+    margin: 1,
     padding: 0,
     width: '100%',
     height: '100%',
