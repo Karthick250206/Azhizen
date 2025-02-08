@@ -1,0 +1,79 @@
+.main{
+    padding:10px 8%;
+    margin-top: 30px;
+}
+
+.title{
+    color:rgb(106, 106, 204);
+    margin:0 45%;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+.container{
+    padding:20px 35px;
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3,minmax(300px,1fr));
+    grid-template-rows: repeat(3);
+    row-gap: 13px;
+}
+.item{
+    padding:15px 10px;
+    border-radius: 1rem;
+    width:350px;
+    box-shadow:2px 2px 10px rgba(0,0,0,0.4);
+    transition: all 1s ease;
+}
+.item:hover{
+    background-color: rgb(125, 212, 212);
+}
+
+.item .projectNo{
+    color:black;
+    font-size: 1.3rem;
+    margin-bottom:20px;
+}
+.projectDisplay{
+    background-color: rgb(125, 212, 212) ;
+    padding: 25px;
+    position: relative;
+    border-radius: 1rem;
+}
+.projectDisplay .top{
+    display:flex ;
+    
+}
+.top .image{
+    width:30%;
+    
+    margin-right: 20px;
+    margin-bottom:65px;
+}
+.top .image img{
+    height: 150px;
+    
+}
+.top .title{
+    font-size: large;
+    width:50%;
+    color: black;
+    font-size: 2rem;
+    line-height: 1.4rem;
+}
+.top{
+    margin-bottom: 40px;
+}
+.close{
+    position: absolute;
+    top:5px;
+    right:5px;
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 65%;
+    font-size: 1.2rem;
+}
+.projectDisplay .details{
+   margin-bottom: 18vh;
+   color: black;
+}
