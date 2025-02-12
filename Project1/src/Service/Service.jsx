@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 // Ensure paths are correct
 import hardwareImage from '../assets/hardware.png';  
 import manufacturingImage from '../assets/manufacturing.jpg';  
