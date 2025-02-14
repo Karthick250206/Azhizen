@@ -1,167 +1,120 @@
-import React, { useState } from "react";
-import ReactDOM from "react-dom/client";
+import React from "react";
+import backgroundImage from "../assets/conbackground.jpg"; // Background for form
+import contusImage from "../assets/contus.jpg"; // Side image
 
-const ServicePage = ({ onContactClick }) => {
+const ContactFormWithImage = () => {
   return (
-    <div className="service-container">
-      <h1>Our Services</h1>
-      <p>We provide amazing services to our clients.</p>
-      <button onClick={onContactClick}>Contact Us</button>
-    </div>
-  );
-};
+    <div style={wrapperStyle}>
+      {/* Centered Heading with Midnight Blue Color */}
+      <h2 style={headingStyle}>Get in Touch</h2>
 
-const ContactForm = ({ onClose }) => {
-  return (
-    <div className="overlay">
-      <div className="container">
-        <h2>Get in Touch</h2>
-        <div className="contact-box">
-          <div className="form-section">
-            <label>Name:</label>
-            <input type="text" placeholder="Enter your name" />
+      {/* Container for Form & Image */}
+      <div style={containerStyle}>
+        {/* Left Section: Contact Form with Background Image */}
+        <div style={formContainerStyle}>
+          <label style={labelStyle}>Name:</label>
+          <input type="text" placeholder="Enter your name" style={inputStyle} />
 
-            <label>Mobile Number:</label>
-            <input type="text" placeholder="Enter your mobile number" />
+          <label style={labelStyle}>Mobile Number:</label>
+          <input type="text" placeholder="Enter your mobile number" style={inputStyle} />
 
-            <label>Email:</label>
-            <input type="email" placeholder="Enter your email" />
+          <label style={labelStyle}>Email:</label>
+          <input type="email" placeholder="Enter your email" style={inputStyle} />
 
-            <label>Any queries:</label>
-            <textarea placeholder="Any queries....."></textarea>
+          <label style={labelStyle}>Any queries:</label>
+          <textarea placeholder="Any queries....." style={textareaStyle}></textarea>
 
-            <button>Register</button>
-            <button className="close-btn" onClick={onClose}>Close</button>
-          </div>
+          <button style={buttonStyle}>Register</button>
+        </div>
 
-          <div className="image-section">
-            <img src="contactus.jpg" alt="Contact Us" />
-          </div>
+        {/* Right Section: Image */}
+        <div style={imageContainerStyle}>
+          <img src={contusImage} alt="Contact Us" style={imageStyle} />
         </div>
       </div>
     </div>
   );
 };
 
-const App = () => {
-  const [showContact, setShowContact] = useState(false);
-
-  return (
-    <div>
-      {showContact ? (
-        <ContactForm onClose={() => setShowContact(false)} />
-      ) : (
-        <ServicePage onContactClick={() => setShowContact(true)} />
-      )}
-    </div>
-  );
+// 🔹 Styles
+const wrapperStyle = {
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  textAlign: "center",
+  minHeight: "100vh",
+  padding: "50px", // Reduced padding to reduce the gap
 };
 
-// Inject CSS Styles
-const styles = `
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f3f3f3;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
+const containerStyle = {
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  gap: "80px",
+  padding: "40px",
+};
 
-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  background: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 20px;
-}
+// 🎯 "Get in Touch" in Midnight Blue
+const headingStyle = {
+  fontSize: "28px",
+  fontWeight: "bold",
+  marginBottom: "10px", // Reduced margin to reduce the gap
+  color: "#03045E", // Midnight Blue
+};
 
-button:hover {
-  background: #0056b3;
-}
+const formContainerStyle = {
+  backgroundImage: `url(${backgroundImage})`, // 🎯 Background applied only to form
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+  backgroundRepeat: "no-repeat",
+  padding: "30px",
+  borderRadius: "15px",
+  width: "350px",
+  boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)",
+  display: "flex",
+  flexDirection: "column",
+};
 
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+const labelStyle = {
+  fontWeight: "bold",
+  marginBottom: "5px",
+};
 
-.container {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  width: 80%;
-  max-width: 500px;
-}
+const inputStyle = {
+  width: "100%",
+  padding: "8px",
+  marginBottom: "10px",
+  borderRadius: "5px",
+  border: "1px solid #ccc",
+};
 
-.contact-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+const textareaStyle = {
+  ...inputStyle,
+  height: "80px",
+};
 
-.form-section {
-  width: 100%;
-}
+const buttonStyle = {
+  padding: "10px",
+  background: "#007bff",
+  color: "white",
+  border: "none",
+  borderRadius: "5px",
+  cursor: "pointer",
+  fontSize: "16px",
+  marginTop: "10px",
+};
 
-.form-section label {
-  display: block;
-  font-size: 16px;
-  color: #333;
-  margin-bottom: 5px;
-}
+const imageContainerStyle = {
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+};
 
-.form-section input,
-.form-section textarea {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
+const imageStyle = {
+  width: "300px",
+  borderRadius: "10px",
+  boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)",
+};
 
-.form-section button {
-  width: 100%;
-  padding: 10px;
-  margin-top: 10px;
-  background: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.form-section button:hover {
-  background: #0056b3;
-}
-
-.close-btn {
-  background: red;
-}
-
-.image-section img {
-  width: 100%;
-  max-width: 300px;
-  border-radius: 10px;
-}
-`;
-
-// Inject styles into the document
-const styleSheet = document.createElement("style");
-styleSheet.type = "text/css";
-styleSheet.innerText = styles;
-document.head.appendChild(styleSheet);
-
-// Render the App
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App />);
-
+// Export Component
+export default ContactFormWithImage;
