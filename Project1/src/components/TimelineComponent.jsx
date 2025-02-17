@@ -1,21 +1,29 @@
 import React from "react";
 import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-import { FaClock, FaSearch, FaEye, FaCogs, FaLock, FaTimes, FaTimesCircle, FaRegTimesCircle, FaUserTimes, FaBusinessTime, FaCalendarTimes, FaStopwatch, FaHourglassHalf } from "react-icons/fa";
-import { FaKitMedical, FaTimeline } from "react-icons/fa6";
+import { FaHourglassHalf, FaSearch, FaEye, FaCogs } from "react-icons/fa";
 
 const TimelineComponent = () => {
   return (
-    <div className="flex flex-col items-center bg-gray-100 min-h-screen p-10">
-      <h1 className="text-3xl font-bold text-blue-600 mb-10"></h1>
+    <div className="flex flex-col items-center bg-gray-100 min-h-screen p-10 pt-24">
+      
+      {/* Custom CSS to shorten the timeline length */}
+      <style>
+        {`
+          .vertical-timeline::before {
+            height: 80% !important; /* Adjust this percentage to modify the line length */
+          }
+        `}
+      </style>
 
       {/* Timeline */}
       <VerticalTimeline lineColor="#00AEEF">
         {/* January 2025 */}
         <VerticalTimelineElement
           contentStyle={{ background: "#fff", color: "#000", borderRadius: "10px", boxShadow: "0 4px 6px rgba(0,0,0,0.1)" }}
-          iconStyle={{ background: "#00AEEF", color: "#000" }} // Change the color to black
-          icon={<FaHourglassHalf/> }
+          iconStyle={{ background: "#00AEEF", color: "#000" }}
+          icon={<FaHourglassHalf />}
+          style={{ marginTop: "80px" }} // Increased margin to lower it
         >
           <h3 className="text-lg font-semibold">January 2025</h3>
         </VerticalTimelineElement>
@@ -23,7 +31,7 @@ const TimelineComponent = () => {
         {/* Mr. Bharathkumar Ramachandiran */}
         <VerticalTimelineElement
           contentStyle={{ background: "#fff", color: "#000", borderRadius: "10px", boxShadow: "0 4px 6px rgba(0,0,0,0.1)" }}
-          iconStyle={{ background: "#00AEEF", color: "#000" }} // Change the color to black
+          iconStyle={{ background: "#00AEEF", color: "#000" }}
           icon={<FaSearch />}
         >
           <h3 className="text-lg font-semibold">Mr. Bharathkumar Ramachandandiran</h3>
@@ -32,7 +40,7 @@ const TimelineComponent = () => {
         {/* Engineering Products */}
         <VerticalTimelineElement
           contentStyle={{ background: "#fff", color: "#000", borderRadius: "10px", boxShadow: "0 4px 6px rgba(0,0,0,0.1)" }}
-          iconStyle={{ background: "#00AEEF", color: "#000" }} // Change the color to black
+          iconStyle={{ background: "#00AEEF", color: "#000" }}
           icon={<FaEye />}
         >
           <h3 className="text-lg font-semibold">
@@ -43,7 +51,7 @@ const TimelineComponent = () => {
         {/* Medical Devices */}
         <VerticalTimelineElement
           contentStyle={{ background: "#fff", color: "#000", borderRadius: "10px", boxShadow: "0 4px 6px rgba(0,0,0,0.1)" }}
-          iconStyle={{ background: "#00AEEF", color: "#000" }} // Change the color to black
+          iconStyle={{ background: "#00AEEF", color: "#000" }}
           icon={<FaCogs />}
         >
           <h3 className="text-lg font-semibold">
@@ -56,6 +64,3 @@ const TimelineComponent = () => {
 };
 
 export default TimelineComponent;
-
-
-

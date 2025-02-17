@@ -2,11 +2,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
+  padding: 5px 10px; /* Adjusted padding */
   background: white;
-  border-bottom: 2px solid lightgray;
+  border-bottom: 1px solid lightgray;
   width: 100%;
   box-sizing: border-box;
+  position: fixed; /* Makes navbar fixed at the top */
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Ensures navbar stays above other elements */
 }
 
 .logo-container {
@@ -26,15 +30,19 @@
 }
 
 .nav-list li {
-  margin: 0 20px;
+  margin: 0 15px; /* Reduced margin */
 }
 
 .nav-list a {
   text-decoration: none;
   color: black;
-  font-size: 18px;
+  font-size: 18px; /* Slightly reduced font size */
 }
 
 .nav-list a:hover {
   text-decoration: underline;
+}
+
+body {
+  padding-top: 60px; /* Prevents content from being hidden behind navbar */
 }
