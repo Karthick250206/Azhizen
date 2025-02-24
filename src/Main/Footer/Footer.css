@@ -1,0 +1,62 @@
+.footer-main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 30px;
+    border:1px solid #C2BCBC;
+    width:140%;
+    padding:20px;
+    
+}
+.map-section{
+ 
+   display: flex;
+   flex-direction: column;
+   row-gap: 5px;
+   margin-right: 20px;
+   padding-right: 90px;
+}
+.map-section button{
+    margin-top: 25px;
+    color:white;
+    font-size:30px;
+    padding:10px 60px;
+    font-weight: 400;
+    background-color: #00B4D8;
+    border-radius: 25px;
+    border-style: none;
+
+}
+.contact-card{
+    border: 1px solid #C2BCBC;
+    padding: 10px 25px;
+    row-gap: 15px;
+    border-radius: 1rem;
+    box-shadow: 10px 3px 20px rgba(0,0,0,0.3);
+}
+.contact{
+    font-size: 36px;
+    font-weight: 400;
+    color:#03045E;
+    margin-bottom: 1rem;
+
+}
+.number{
+    font-size: 32px;
+    font-weight: 400;
+    word-spacing: 5px;
+    letter-spacing: 1.5px;
+    margin-bottom: 1rem;
+}
+.email{
+    font-size: 32px;
+    font-weight: 400; 
+    margin-bottom: 1rem;
+
+}
+.follow{
+    font-size: 36px;
+    font-weight: 400;
+    color:#03045E;
+    margin-bottom: 1rem;
+}
