@@ -56,12 +56,13 @@
     height: 150px;
     
 }
-.top .title{
+.top .top-title{
     font-size: large;
-    width:50%;
+    width:40%;
     color: black;
     font-size: 2rem;
     line-height: 1.4rem;
+    line-gap-override: 1rem;
 }
 .top{
     margin-bottom: 40px;
@@ -71,9 +72,7 @@
     top:5px;
     right:5px;
     cursor: pointer;
-    border: 2px solid black;
-    border-radius: 65%;
-    font-size: 1.2rem;
+    
 }
 .projectDisplay .details{
    margin-bottom: 18vh;
